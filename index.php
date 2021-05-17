@@ -6,7 +6,7 @@ $crud = new CRUD();
 <html lang="en">
 
 <head>
-    <title>Pertemuan 10</title>
+    <title>Pertemuan 11</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -18,7 +18,7 @@ $crud = new CRUD();
 <body>
 
     <div class="jumbotron text-center" style="margin-bottom:0">
-        <h1>CRUD Pertemuan 10</h1>
+        <h1>CRUD Pertemuan 11</h1>
         <p>Reza Fahlevi - 181011400928</p>
     </div>
 

@@ -75,7 +75,9 @@ $crud = new CRUD();
                             $page = $_GET['page'] ?? 1;
                             $result = $crud->page('tamu', [], $page, $limit);
                             if (isset($_GET['search'])) {
-                                $result = $crud->search('tamu', ['nama' => $_GET['search']]);
+                                $like = ['nama' => $_GET['search']];
+                                $count_page = $crud->count_page('tamu', $limit, $like);
+                                $result = $crud->search('tamu', $like);
                             }
                             $no = 0;
                             foreach ($result as $row) : $no++; ?>

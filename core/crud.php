@@ -32,10 +32,23 @@ class CRUD
         return $query;
     }
 
-    public function count_page($table, $limit = 5)
+    public function count_page($table, $limit = 5, $like = [])
     {
         $sql = "SELECT COUNT(*) as jml FROM $table";
 
+        $count = count($like);
+        if ($count > 0) {
+            $sql .= ' WHERE ';
+            $i = 1;
+            foreach ($like as $key => $value) {
+                if ($i == $count) {
+                    $sql .= " $key LIKE '%$value%'";
+                } else {
+                    $sql .= " $key LIKE '%$value%' OR ";
+                }
+                $i++;
+            }
+        }
         $query = $this->db->query($sql);
 
         $jml = $query->fetch_array()['jml'];
